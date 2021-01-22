@@ -1,0 +1,25 @@
+{
+  "name": "delovi",
+  "version": "1.0.0",
+  "description": "Node app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksaEric/KS_Delovi.git"
+  },
+  "author": "Aleksa Eric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AleksaEric/KS_Delovi/issues"
+  },
+  "homepage": "https://github.com/AleksaEric/KS_Delovi#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
