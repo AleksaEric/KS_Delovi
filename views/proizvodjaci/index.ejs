@@ -1,0 +1,10 @@
+<h2>Pretrazi proizvodjace</h2>
+<form action="/proizvodjaci" method="GET">
+<label>Ime</label>
+<input type="text" name="name" value="<%= searchOptions.name %> ">
+<button type="submit">Pretrazi</button>
+</form>
+<br>
+<% proizvodjaci.forEach(proizvodjac => { %>
+    <div><%= proizvodjac.name %></div>
+<% }) %>  
