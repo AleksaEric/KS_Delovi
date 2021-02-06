@@ -1,0 +1,14 @@
+<h2>Pretrazi delove</h2>
+<form action="/delovi" method="GET">
+    <div>
+<label>Naziv</label>
+<input type="text" name="naziv" value="<%= searchOptions.naziv %> ">
+</div>
+<button type="submit">Pretrazi</button>
+</form>
+<br>
+<div>
+<% delovi.forEach(deo => { %>
+    <div><%= deo.naziv %></div>
+<% }) %>  
+</div>
