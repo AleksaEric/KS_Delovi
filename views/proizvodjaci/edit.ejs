@@ -1,0 +1,7 @@
+<h2>Izmeni proizvodjaca</h2>
+<form action="/proizvodjaci/<%= proizvodjac.id %>?_method=PUT " method="POST">
+
+    <%- include('_form_fields') %> 
+    <a href="/proizvodjaci/<%= proizvodjac.id %> ">Ponisti</a>
+    <button type="submit">Izmeni</button>
+</form>

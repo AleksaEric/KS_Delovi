@@ -7,4 +7,13 @@
 <br>
 <% proizvodjaci.forEach(proizvodjac => { %>
     <div> <%= proizvodjac.name %> </div>
+    <a href="/proizvodjaci/<%= proizvodjac.id %> ">Prikazi</a>
+    <a href="/proizvodjaci/<%= proizvodjac.id %>/edit">Izmeni</a>
+
+    <%- include('../partials/deleteForm', 
+        { url: `/proizvodjaci/${proizvodjac.id}`}) %> 
+
+    <!-- <form method="POST" action="/proizvodjaci/<%= proizvodjac.id %>?_method=DELETE ">
+        <button type="submit">Izbrisi</button>
+    </form> -->
 <% }) %>  

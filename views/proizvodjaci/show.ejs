@@ -1,0 +1,11 @@
+<h2><%= proizvodjac.name %> </h2>
+<a href="/proizvodjaci/<%= proizvodjac.id %>/edit ">Izmeni</a>
+<%- include('../partials/deleteForm',
+{ url: `/proizvodjaci/${proizvodjac.id}`}) %> 
+
+<% if (deloviByProizvodjac.length > 0) { %> 
+    <h2>Delovi od Proizvodjaca</h2>
+    <% deloviByProizvodjac.forEach(deo => { %>
+        <div><%= deo.naziv %></div>
+    <% }) %>
+    <% } %> 
