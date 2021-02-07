@@ -1,25 +1,28 @@
-
-<div>
-<label>Naziv</label>
-<input type="text" name="naziv" value="<%= deo.naziv %>">
-</div>
-
-
-<div>
-<label>Stanje</label>
-<input type="number" name="stanje" min="1" value="<%= deo.stanje %>">
-</div>
-
-<div>
-<label>Proizvodjac</label>
-<select name="proizvodjac">
-<% proizvodjaci.forEach(proizvodjac => { %>
+<div class="form-row">
+    <div class="form-item">
+        <label>Naziv</label>
+        <input type="text" name="naziv" value="<%= deo.naziv %>">
+    </div>
+    <div class="form-item">
+        
+        <label>Proizvodjac</label>
+        <select name="proizvodjac">
+        <% proizvodjaci.forEach(proizvodjac => { %>
      
-    <% if (proizvodjac.id === deo.proizvodjac) { %>
+        <% if (proizvodjac.id === deo.proizvodjac) { %>
         <option selected label="<%= proizvodjac.name %>" value="<%= proizvodjac.id %> ">  
-    <% } else { %>
+        <% } else { %>
         <option label="<%= proizvodjac.name %> " value="<%= proizvodjac.id %> ">
-    <% } %>
-<% }) %>  
-</select>
+        <% } %>
+        <% }) %>  
+        </select>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Stanje</label>
+        <input type="number" name="stanje" min="1" value="<%= deo.stanje %>">
+    </div>
+    <div class="form-item"></div>
 </div>

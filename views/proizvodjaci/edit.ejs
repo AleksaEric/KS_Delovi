@@ -2,6 +2,9 @@
 <form action="/proizvodjaci/<%= proizvodjac.id %>?_method=PUT " method="POST">
 
     <%- include('_form_fields') %> 
-    <a href="/proizvodjaci/<%= proizvodjac.id %> ">Ponisti</a>
-    <button type="submit">Izmeni</button>
+    <div class="form-row btn-row">
+    <a class="btn btn-danger" href="/proizvodjaci/<%= proizvodjac.id %> ">Ponisti</a>
+    <button class="btn btn-primary" type="submit">Izmeni</button>
+    
+    </div>
 </form>

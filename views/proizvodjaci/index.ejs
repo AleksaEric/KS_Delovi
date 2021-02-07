@@ -1,8 +1,17 @@
 <h2 class="page-header">Pretrazi proizvodjace</h2>
 <form action="/proizvodjaci" method="GET">
-<label>Ime</label>
-<input type="text" name="name" value="<%= searchOptions.name %> ">
-<button type="submit">Pretrazi</button>
+    <div class="form-row">
+        <div class="form-item">
+            <label>Ime</label>
+            <input type="text" name="name" value="<%= searchOptions.name %> ">
+        </div>
+        
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Pretrazi</button>
+    </div>
+
+
 </form>
 <br>
 <% proizvodjaci.forEach(proizvodjac => { %>

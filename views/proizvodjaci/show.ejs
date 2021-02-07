@@ -1,10 +1,11 @@
 <h2 class="page-header"><%= proizvodjac.name %> </h2>
-<a href="/proizvodjaci/<%= proizvodjac.id %>/edit ">Izmeni</a>
-<%- include('../partials/deleteForm',
-{ url: `/proizvodjaci/${proizvodjac.id}`}) %> 
-
+<div class="btn-row">
+    <a class="btn btn-primary" href="/proizvodjaci/<%= proizvodjac.id %>/edit ">Izmeni</a>
+    <%- include('../partials/deleteForm',
+    { url: `/proizvodjaci/${proizvodjac.id}`}) %> 
+</div>
 <% if (deloviByProizvodjac.length > 0) { %> 
-    <h2>Delovi od Proizvodjaca</h2>
+    <h2 class="page-header">Delovi od Proizvodjaca</h2>
     <% deloviByProizvodjac.forEach(deo => { %>
         <div><%= deo.naziv %></div>
     <% }) %>

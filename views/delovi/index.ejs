@@ -1,11 +1,15 @@
 <h2 class="page-header">Pretrazi delove</h2>
 <form action="/delovi" method="GET">
-    <div>
+    <div class="form-row">
+    <div class="form-item">
 <label>Naziv</label>
 <input type="text" name="naziv" value="<%= searchOptions.naziv %> ">
+<div class="form-row">
+<button class="btn btn-primary" type="submit">Pretrazi</button>
 </div>
-<button type="submit">Pretrazi</button>
 </form>
+</div>
+</div>
 <br>
 <div>
 <% delovi.forEach(deo => { %>
