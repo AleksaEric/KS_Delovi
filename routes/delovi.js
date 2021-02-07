@@ -1,3 +1,4 @@
+const { render } = require('ejs')
 const express = require('express')
 const router = express.Router()
 const Deo = require('../models/deo')
@@ -91,7 +92,43 @@ router.post('/', async (req, res) =>{
     
     
 })
+
+router.get('/:id', async (req, res) =>{
+    try{
+        const deo = await Deo.findById(req.params.id)
+        .populate('proizvodjac')
+        .exec()
+        res.render('delovi/show', {deo: deo})
+    }catch{
+        res.redirect('/')
+    }
+})
+
+//Ruta za izmenu delova
+router.get('/:id/edit', async (req, res) =>{
+    try{
+        const deo = await Deo.findById(req.params.id)
+        renderEditPage(res, deo)
+    }catch{
+        res.redirect('/')
+    }
     
+    
+})
+
+async function renderEditPage(res, deo, hasError = false){
+        try{
+            const proizvodjaci = await Proizvodjac.find({})
+            const params = {
+                proizvodjaci: proizvodjaci,
+                deo: deo
+            }
+            if (hasError) params.errorMessage = 'Greska pri kreiranju dela'
+            res.render('delovi/edit', params)
+        }catch{
+            res.redirect('/delovi')
+        }
+    }
 
 
 //  async function renderNewPage(res, deo, hasError = false){

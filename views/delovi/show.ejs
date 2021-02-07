@@ -1,0 +1,6 @@
+<h2 class="page-header"><%= deo.naziv %> </h2>
+<div>Proizvodjac: <%= deo.proizvodjac.name %> </div>
+<div>Stanje: <%= deo.stanje %> </div>
+<a href="/delovi/<%= deo.id %>/edit ">Izmeni</a>
+<%- include('../partials/deleteForm', { url: `/delovi/${deo.id}`}) %> 
+<a href="/proizvodjaci/<%= deo.proizvodjac.id %> ">Vidi proizvodjaca</a>
